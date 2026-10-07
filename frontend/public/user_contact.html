@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juice Salon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+        body {
+          font-family: "Montserrat", sans-serif;
+        }
+        .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+/* Navbar Styling */
+.custom-navbar {
+    background-color: #c9c2b7; /* Deep Black */
+    padding: 10px 20px;
+}
+
+/* Menu Links */
+.custom-navbar a {
+    color: rgb(8, 7, 7);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.custom-navbar a:hover {
+    color: #050505; /* Soft Gold */
+}
+
+/* Menu Links */
+.custom-navbar a {
+    color: rgb(6, 6, 6);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px; /* Space for the underline effect */
+}
+
+/* Underline Effect on Hover */
+.custom-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: #080808; /* Soft Gold */
+    transition: width 0.3s ease-in-out;
+}
+
+.custom-navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #2c2c2c; /* Dark Brown */
+    border: none;
+}
+
+/* Dropdown Items */
+.dropdown-menu .dropdown-item {
+    color: white;
+    transition: background 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #c9c2b7; /* Gold Accent */
+    color: black;
+}
+
+  /* Contact Section */
+.contact-section {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+.contact-section h2 {
+    font-weight: bold;
+    color: #3E2723;
+}
+.contact-section p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.contact-section i {
+    color: #D4AF37;
+    margin-right: 8px;
+}
+
+/* Contact Form */
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.btn-primary {
+    background-color: #9d8b7e;
+    border: none;
+}
+.btn-primary:hover {
+    background-color: #D4AF37;
+}
+
+/* Google Maps */
+.map-container iframe {
+    border-radius: 10px;
+}
+
+/* Social Media */
+.social-icon {
+    font-size: 24px;
+    color: #222;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.social-icon:hover {
+    color: #D4AF37;
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 24px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+.whatsapp-float:hover {
+    background: #1EBE5D;
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid custom-navbar">
+      <div class="d-flex align-items-center justify-content-between py-3">
+          <!-- Salon Name (Logo) -->
+          <img src="images/logo.png" alt="AURA LUXE Logo" style="width: 200px; height: 80px;">
+  
+          <!-- Menu Items -->
+          <div class="d-flex">
+              <a href="user_services.html" class="btn btn-link me-4">Services</a>
+              <a href="user_offers.html" class="btn btn-link me-4">Offers</a>
+              <a href="user_locateus.html" class="btn btn-link me-4">Locate Us</a>
+  
+              <!-- About Us Dropdown -->
+              <div class="dropdown me-4">
+                  <a href="#" class="btn btn-link dropdown-toggle" id="aboutDropdown" role="button">About Us</a>
+                  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                      <li><a class="dropdown-item" href="user_about.html">About</a></li>
+                      <li><a class="dropdown-item" href="user_contact.html">Contact</a></li>
+                      <li><a class="dropdown-item" href="user_team.html">Team</a></li>
+                  </ul>
+              </div>
+  
+              <a href="user_bookappointment.html" class="btn btn-link me-4">Book Appointment</a>
+          </div>
+      </div>
+  </div>
+  
+    
+      <!-- Contact Section -->
+      <section class="contact-section py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Get in Touch</h2>
+            <div class="row">
+
+                <!-- Contact Info -->
+                <div class="col-md-5">
+                    <h4>Contact Information</h4>
+                    <p><i class="fas fa-map-marker-alt"></i>202, Waghawadi Road, Bhavnagar, Gujarat - 364001</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> contact@auraluxe.com</p>
+                    <h5>Opening Hours</h5>
+                    <p>Mon - Sat: 10:00 AM - 8:00 PM</p>
+                    <p>Sunday: Closed</p>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="col-md-7">
+                    <h4>Send Us a Message</h4>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Your Phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Maps Section -->
+<section class="map-section">
+  <div class="container">
+      <h2 class="text-center mb-4">Find Us Here</h2>
+      <div class="map-container">
+        <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.7360295452196!2d72.15063141493265!3d21.764484985941384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04e9fcdd6c767%3A0x370724dbb2f90e26!2s202%20Waghawadi%20Rd%2C%20Bhavnagar%2C%20Gujarat%20364001!5e0!3m2!1sen!2sin!4v1616350546967!5m2!1sen!2sin" 
+        width="100%" 
+        height="350" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+    </iframe>
+  </div>
+  </div>
+</section>
+
+
+    <!-- Social Media Links -->
+    <section class="social-section py-4 text-center">
+        <h4>Follow Us</h4>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+    </section>
+
+    <!-- Floating WhatsApp Button -->
+   
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- About Us Section -->
+        <div class="col-md-3 text-center">
+          <h5>About Us</h5>
+          <p>
+            We are dedicated to providing high-quality beauty and wellness
+            services that enhance your natural beauty and boost your
+            confidence.
+          </p>
+        </div>
+
+        <!-- Services Section -->
+        <div class="col-md-3 text-center">
+          <h5>Our Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Hair Styling</a></li>
+            <li><a href="#" class="text-white">Facials & Skin Care</a></li>
+            <li><a href="#" class="text-white">Nail Care</a></li>
+            <li><a href="#" class="text-white">Massage Therapy</a></li>
+            <li><a href="#" class="text-white">Bridal Packages</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="col-md-3 text-center">
+          <h5>Contact Info</h5>
+          <p><strong>Address:</strong> 123 Beauty St, Glamour City</p>
+          <p><strong>Phone:</strong> +1 234 567 890</p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:salon@example.com" class="text-white"
+              >salon@example.com</a
+            >
+          </p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <div class="d-flex justify-content-center">
+            <a href="#" class="text-white me-3" aria-label="Facebook"
+              ><i class="fab fa-facebook fa-2x"></i
+            ></a>
+            <a href="#" class="text-white me-3" aria-label="Twitter"
+              ><i class="fab fa-twitter fa-2x"></i
+            ></a>
+            <a href="#" class="text-white me-3" aria-label="Instagram"
+              ><i class="fab fa-instagram fa-2x"></i
+            ></a>
+            <a href="#" class="text-white me-3" aria-label="YouTube"
+              ><i class="fab fa-youtube fa-2x"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+
+      
+      <!-- Footer Bottom -->
+      <div class="row mt-4 text-center">
+        <div class="col-12">
+          <p>&copy; 2025 Salon Name | All Rights Reserved</p>
+          <p>
+            Website designed by
+            <a href="your-website-link" class="text-white"
+              >Your Company Name</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+

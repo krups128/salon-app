@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juice Salon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+/* Navbar Styling */
+.custom-navbar {
+    background-color: #c9c2b7; /* Deep Black */
+    padding: 10px 20px;
+}
+
+/* Menu Links */
+.custom-navbar a {
+    color: rgb(8, 7, 7);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.custom-navbar a:hover {
+    color: #050505; /* Soft Gold */
+}
+
+/* Menu Links */
+.custom-navbar a {
+    color: rgb(6, 6, 6);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px; /* Space for the underline effect */
+}
+
+/* Underline Effect on Hover */
+.custom-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: #080808; /* Soft Gold */
+    transition: width 0.3s ease-in-out;
+}
+
+.custom-navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #2c2c2c; /* Dark Brown */
+    border: none;
+}
+
+/* Dropdown Items */
+.dropdown-menu .dropdown-item {
+    color: white;
+    transition: background 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #c9c2b7; /* Gold Accent */
+    color: black;
+}
+
+
+
+      .promo-box {
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            min-height: 220px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+/* Membership Box */
+.membership-box {
+    background: url('images/blue.jpg') center/cover no-repeat;
+    color: white;
+}
+
+/* Gift Card */
+.gift-card {
+    background: url('images/c2.jpg') center/cover no-repeat; /* Add correct image */
+    color: white;
+}
+
+/* Duty-Free */
+.duty-free {
+    background: url('images/c5.jpg') center/cover no-repeat;
+    color: white;
+}
+
+/* INTRO SECTION */
+.intro-section {
+    background-color: #dcd7cf; /* Light elegant background */
+    border-radius: 10px;
+}
+
+.intro-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #3E2723; /* Dark brown elegant text */
+}
+
+.intro-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.intro-btn {
+    background-color: #9d8b7e; /* Rose Gold */
+    border: none;
+    color: #f9f5f5;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.intro-btn:hover {
+    background-color: #D4AF37; /* Soft Gold */
+}
+
+.intro-img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.service-card {
+        border: 2px solid black; /* Thick Black Border */
+        border-radius: 12px;
+        overflow: hidden;
+        background: #ede8e0;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-card h4 {
+        font-weight: 600;
+        color: #1e1e1e;
+    }
+
+    .service-card p {
+        font-size: 16px;
+        color: #080808;
+        font-weight: 500;
+    }
+
+
+
+        .package-card {
+        border: 1px solid #ccc;
+        padding: 20px;
+        text-align: center;
+        border-radius: 8px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .package-card:hover {
+        transform: scale(1.05);
+    }
+
+    .peach-bg {
+        background-color: #e0dad0;
+    }
+
+    .white-bg {
+        background-color: #FFFFFF;
+    }
+
+    .package-card h2 {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .package-card p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .package-card .price {
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .enquiry-banner {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        font-family: 'Georgia', serif;
+        color: #333; /* Dark gray color */
+        padding: 15px;
+    }
+
+/* Offer Section Button Styling */
+.btn-custom-offer {
+    background-color: #9d8b7e; /* Gold color */
+    color: #f9f7f7; /* Dark text for contrast */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-custom-offer:hover {
+    background-color: #D4AF37; /* Darker gold */
+    color: white;
+}
+
+
+    .footer {
+                    background: #222;
+                    color: white;
+                    padding: 40px 0;
+
+                    footer a:hover {
+          color: #f8b400; /* Change to your brand color */
+          text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid custom-navbar">
+      <div class="d-flex align-items-center justify-content-between py-3">
+          <!-- Salon Name (Logo) -->
+          <img src="images/logo.png" alt="AURA LUXE Logo" style="width: 200px; height: 80px;">
+  
+          <!-- Menu Items -->
+          <div class="d-flex">
+              <a href="user_services.html" class="btn btn-link me-4">Services</a>
+              <a href="user_offers.html" class="btn btn-link me-4">Offers</a>
+              <a href="user_locateus.html" class="btn btn-link me-4">Locate Us</a>
+  
+              <!-- About Us Dropdown -->
+              <div class="dropdown me-4">
+                  <a href="#" class="btn btn-link dropdown-toggle" id="aboutDropdown" role="button">About Us</a>
+                  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                      <li><a class="dropdown-item" href="user_about.html">About</a></li>
+                      <li><a class="dropdown-item" href="user_contact.html">Contact</a></li>
+                      <li><a class="dropdown-item" href="user_team.html">Team</a></li>
+                  </ul>
+              </div>
+  
+              <a href="user_bookappointment.html" class="btn btn-link me-4">Book Appointment</a>
+          </div>
+      </div>
+  </div>
+  
+
+    
+
+<!-- Hero Section -->
+<div style="position: relative; text-align: center; color: white">
+    <img
+      src="images/offers.jpg"
+      alt=""
+      height="500px"
+      width="100%"
+    />
+    <div
+    style="
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    "
+  >
+        <h1 class="display-4 fw-bold">Elevate Your Beauty Journey </h1>
+        <p class="lead"> Discover new ways to pamper yourself at Aura Luxe.</p>
+    </div>
+</div>
+<br><br>
+
+ <!-- Introduction Section -->
+ <section class="intro-section container py-5">
+  <div class="row align-items-center">
+    <!-- Text Content -->
+    <div class="col-md-6">
+      <h2 class="intro-title">Exclusive Deals & Luxurious Indulgence</h2>
+      <p class="intro-text">
+        Indulge in luxury without breaking the bank! Discover our latest offers and limited-time deals designed to give you the ultimate salon experience at unbeatable prices. Whether you're looking for a relaxing spa session, a rejuvenating facial, or a glamorous hair makeover, our exclusive discounts and special packages ensure you get the best of Aura Luxe at exceptional value. Stay tuned for seasonal promotions, membership perks, and festive offers—because self-care should always be rewarding! </p>
+      <a href="user_services.html" class="btn btn-primary intro-btn">DISCOVER MORE</a>
+    </div>
+
+        <!-- Image -->
+        <div class="col-md-6 text-center">
+          <img src="images/offer girl.jpg" alt="AURA LUXE Salon" class="intro-img img-fluid rounded" style="width: 500px; height: 400px;">
+        </div>
+      </div>
+    </section>
+
+
+
+
+ 
+
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4 align-items-stretch">
+            <!-- Membership Section -->
+            <div class="col-md-4">
+              
+                <a href="user_bookappointment.html" class="text-decoration-none">
+                    <div class="promo-box membership-box h-100 d-flex flex-column justify-content-center text-center p-4">
+                      
+                        <h2 class="text-white">Unlock Year-Round Savings</h2>
+                        <p class="text-white">Join our exclusive membership and enjoy <span class="text-warning"> 20% off</span> on every visit for a full year</p>
+                    </div>
+                </a>
+            </div>
+            <!-- Gift Card Section -->
+            <div class="col-md-4">
+                <a href="user_bookappointment.html" class="text-decoration-none">
+                    <div class="promo-box gift-card h-100 d-flex flex-column justify-content-center text-center p-4">
+                        <h2 class="text-dark">Gift a Touch of Luxury <span class="text-danger">Delight them with an Aura Luxe Gift Card</span></h2>
+                    </div>
+                </a>
+            </div>
+            <!-- Duty-Free Section -->
+            <div class="col-md-4">
+                <a href="user_bookappointment.html" class="text-decoration-none">
+                    <div class="promo-box duty-free h-100 d-flex flex-column justify-content-center text-center p-4">
+                        <h2 class="text-white">Exclusive Offer for Travelers</h2>
+                        <p class="text-white fw-bold">Enjoy a 20% discount on select services </p>
+                        <p class="text-warning">BHAVNAGAR • AHEMDABAD • SURAT</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container py-5">
+    <h1 class="text-center mb-4">Signature Packages</h1>
+    <div class="row g-4">
+        <!-- Basic Package -->
+        <div class="col-md-4">
+            <div class="package-card white-bg">
+                <h2>Basic</h2>
+                <p>Pay</p>
+                <p class="price">₹11,000</p>
+                <p>Get benefits worth ₹14,300 (Save ₹3,300 - valid for 6 months)</p>
+            </div>
+        </div>
+
+        <!-- Prime Package -->
+        <div class="col-md-4">
+            <div class="package-card peach-bg">
+                <h2>Prime</h2>
+                <p>Pay</p>
+                <p class="price">₹21,000</p>
+                <p>Get benefits worth ₹28,350 (Save ₹7,350 - valid for 10 months)</p>
+            </div>
+        </div>
+
+        <!-- Silver Package -->
+        <div class="col-md-4">
+            <div class="package-card white-bg">
+                <h2>Silver</h2>
+                <p>Pay</p>
+                <p class="price">₹42,000</p>
+                <p>Get benefits worth ₹58,800 (Save ₹16,800 - valid for 1 year)</p>
+            </div>
+        </div>
+
+        <!-- Gold Package -->
+        <div class="col-md-4">
+            <div class="package-card peach-bg">
+                <h2>Gold</h2>
+                <p>Pay</p>
+                <p class="price">₹75,000</p>
+                <p>Get benefits worth ₹1,08,750 (Save ₹33,750 - valid for 18 months)</p>
+            </div>
+        </div>
+
+        <!-- Platinum Package -->
+        <div class="col-md-4">
+            <div class="package-card white-bg">
+                <h2>Platinum</h2>
+                <p>Pay</p>
+                <p class="price">₹1,00,000</p>
+                <p>Get benefits worth ₹1,50,000 (Save ₹50,000 - valid for 18 months)</p>
+            </div>
+        </div>
+
+        <!-- Diamond Package (New) -->
+        <div class="col-md-4">
+            <div class="package-card peach-bg">
+                <h2>Diamond</h2>
+                <p>Pay</p>
+                <p class="price">₹1,50,000</p>
+                <p>Get benefits worth ₹2,25,000 (Save ₹75,000 - valid for 2 years)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="enquiry-banner">
+    Enquire Today At Your Nearest Aura Luxe Salon
+</div>
+<Br><br>
+  
+ <!-- Offer Section -->
+ <div class="position-relative text-center text-white bg-dark">
+  <img
+      src="images/g1.jpg"
+      class="img-fluid w-100"
+      style="height: 400px; object-fit: cover; opacity: 0.5"
+      alt="Hair Botox Offer"
+  />
+  <div class="position-absolute top-50 start-50 translate-middle">
+      <br />
+      <h2 class="fw-bold">Add a Splash of Color</h2>
+      <h3 class="fw-semibold">
+          Enjoy up to 40% off on hair coloring services every Tuesday & Thursday. Book today!
+      </h3><br>
+      <a href="user_bookappointment.html" class="btn-custom-offer mt-3">BOOK AN APPOINTMENT</a>
+  </div>
+</div>
+  <br><br>
+
+  <!-- Footer Section -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- About Us Section -->
+        <div class="col-md-3 text-center">
+          <h5>About Us</h5>
+          <p>
+            We are dedicated to providing high-quality beauty and wellness
+            services that enhance your natural beauty and boost your
+            confidence.
+          </p>
+        </div>
+
+        <!-- Services Section -->
+        <div class="col-md-3 text-center">
+          <h5>Our Services</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-white">Hair Styling</a></li>
+            <li><a href="#" class="text-white">Facials & Skin Care</a></li>
+            <li><a href="#" class="text-white">Nail Care</a></li>
+            <li><a href="#" class="text-white">Massage Therapy</a></li>
+            <li><a href="#" class="text-white">Bridal Packages</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info Section -->
+        <div class="col-md-3 text-center">
+          <h5>Contact Info</h5>
+          <p><strong>Address:</strong> 123 Beauty St, Glamour City</p>
+          <p><strong>Phone:</strong> +1 234 567 890</p>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:salon@example.com" class="text-white"
+              >salon@example.com</a
+            >
+          </p>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="col-md-3 text-center">
+          <h5>Follow Us</h5>
+          <div class="d-flex justify-content-center">
+            <a href="#" class="text-white me-3" aria-label="Facebook"
+              ><i class="fab fa-facebook fa-2x"></i
+            ></a>
+            <a href="#" class="text-white me-3" aria-label="Twitter"
+              ><i class="fab fa-twitter fa-2x"></i
+            ></a>
+            <a href="#" class="text-white me-3" aria-label="Instagram"
+              ><i class="fab fa-instagram fa-2x"></i
+            ></a>
+            <a href="#" class="text-white me-3" aria-label="YouTube"
+              ><i class="fab fa-youtube fa-2x"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="row mt-4 text-center">
+        <div class="col-12">
+          <p>&copy; 2025 Salon Name | All Rights Reserved</p>
+          <p>
+            Website designed by
+            <a href="your-website-link" class="text-white"
+              >Your Company Name</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salon Carousel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* HERO SECTION */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .hero .carousel-inner,
+        .hero .carousel-item {
+            height: 100%;
+        }
+
+        .hero .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Black overlay */
+        .hero .carousel-item::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+            z-index: 1;
+        }
+
+        /* Centered text */
+        .hero .carousel-caption {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+
+        .hero .carousel-caption h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .hero .carousel-caption p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Button styling */
+        .hero .carousel-caption .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            background-color: #9d8b7e !important;
+            border: none;
+            color: white;
+        }
+
+        .hero .carousel-caption .btn:hover {
+            background-color: #8a796c !important;
+        }
+
+        /* White indicators */
+        .carousel-indicators [data-bs-target] {
+            background-color: white;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin: 0 5px;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            filter: invert(1); /* Make arrows white */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Carousel -->
+<div id="salonCarousel" class="carousel slide hero" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#salonCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#salonCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#salonCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img src="image1.jpg" alt="Salon Interior">
+            <div class="carousel-caption">
+                <h1>JOIN THE AURA LUXE SALON LEGACY</h1>
+                <p>Elevate your style with the fastest-growing salon chain.</p>
+                <a href="#" class="btn">BOOK AN APPOINTMENT</a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img src="image2.jpg" alt="Luxury Salon Experience">
+            <div class="carousel-caption">
+                <h1>PAMPER YOURSELF WITH LUXURY</h1>
+                <p>Experience the ultimate indulgence in hair and beauty care.</p>
+                <a href="#" class="btn">BOOK AN APPOINTMENT</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <img src="image3.jpg" alt="Professional Salon Team">
+            <div class="carousel-caption">
+                <h1>EXPERT STYLISTS AT YOUR SERVICE</h1>
+                <p>Get styled by top industry professionals for a flawless look.</p>
+                <a href="#" class="btn">BOOK AN APPOINTMENT</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#salonCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#salonCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
+<header class="hero text-center text-white bg-dark">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+  
+        <div class="carousel-item active">
+          <img src="images/black int.jpg" class="d-block w-100">
+          <div class="carousel-caption">
+            <h1 class="display-4 fw-bold">JOIN THE AURA LUXE SALON LEGACY</h1>
+            <p class="lead">
+              Elevate your style with the fastest-growing salon chain in our state, celebrated as a top franchise.
+            </p>
+            <a href="user_bookappointment.html" class="btn btn-primary">BOOK AN APPOINTMENT</a>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <img src="images/girls.jpg" class="d-block w-100">
+          <div class="carousel-caption">
+            <a href="user_bookappointment.html" class="text-decoration-none text-white">
+              <h1 class="display-4 fw-bold">LUXURY BEAUTY SERVICES</h1>
+            </a>
+            <p class="lead">✨ Indulge in premium hair, skin, and beauty treatments designed just for you.</p>
+            <a href="user_services.html" class="btn btn-primary ">view services</a>
+          </div>
+        </div>
+  
+        <div class="carousel-item">
+          <img src="images/hair.jpg" class="d-block w-100">
+          <div class="carousel-caption">
+            <a href="user_bookappointment.html" class="text-decoration-none text-white">
+              <h1 class="display-4 fw-bold">BOOK YOUR APPOINTMENT</h1>
+            </a>
+            <p class="lead">💆‍♀️ Let our expert stylists craft your perfect look—effortless beauty, just a click away!</p>
+            <a href="user_bookappointment.html" class="btn btn-primary ">BOOK AN APPOINTMENT</a>
+          </div>
+        </div>
+      </div>
+      
+  
+      <!-- Carousel Controls -->
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </a><br><br>
+    </div>
+  </header>
+
+
+
+ <!-- Carousel -->
+ <div id="salonCarousel" class="carousel slide hero" data-bs-ride="carousel">
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#salonCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#salonCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#salonCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+  
+    <!-- Slides -->
+    <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+            <img src="images/black int.jpg" alt="Salon Interior">
+            <div class="carousel-caption">
+                <h1>JOIN THE AURA LUXE SALON LEGACY</h1>
+                <p> Elevate your style with the fastest-growing salon chain in our state, celebrated as a top franchise.</p>
+                <a href="#" class="btn">BOOK AN APPOINTMENT</a>
+            </div>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+            <img src="images/girls.jpg" alt="Luxury Salon Experience">
+            <div class="carousel-caption">
+                <h1>PAMPER YOURSELF WITH LUXURY BEAUTY SERVICES</h1>
+                <p>✨ Indulge in premium hair, skin, and beauty treatments designed just for you.</p>
+                <a href="#" class="btn">view services</a>
+            </div>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+            <img src="images/hair.jpg" alt="Professional Salon Team">
+            <div class="carousel-caption">
+                <h1>EXPERT STYLISTS AT YOUR SERVICE</h1>
+                <p>💆‍♀️ Let our expert stylists craft your perfect look—effortless beauty, just a click away!</p>
+                <a href="#" class="btn">BOOK AN APPOINTMENT</a>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#salonCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#salonCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

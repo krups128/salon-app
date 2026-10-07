@@ -1,0 +1,29 @@
+body {
+    background-color: #f8f9fa;
+}
+.appointments-container {
+    max-width: 900px;
+    margin: auto;
+}
+.status-badge {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.status-upcoming { background-color: #ffc107; color: #000; }
+.status-completed { background-color: #28a745; color: white; }
+.status-canceled { background-color: #dc3545; color: white; }
+.btn-cancel {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.btn-cancel:hover {
+    background-color: #a71d2a;
+}

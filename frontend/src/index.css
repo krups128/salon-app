@@ -1,0 +1,47 @@
+body {
+  background-color: #a5adb5;
+}
+.change-password-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background: white;
+  padding: 20px;
+}
+/* Input Box Styling */
+.form-control {
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+}
+.form-control:focus {
+  border-color: #d2ab7c; /* Change to desired color */
+  outline: none;
+  box-shadow: none;
+}
+/* Update Password Button */
+.btn-update {
+  background-color: #c9c2b7; /* Desired color */
+  color: rgb(12, 12, 12);
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn-update:hover {
+  background-color: #c9c2b7; /* Darker shade */
+}
+/* Back to Login Button */
+.btn-back {
+  background: none;
+  border: none;
+  color: #030303; /* Desired color */
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.btn-back:hover {
+  color: #c9c2b7; /* Darker shade */
+}

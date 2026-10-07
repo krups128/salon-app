@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Appointments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .appointments-container {
+            max-width: 900px;
+            margin: auto;
+        }
+        .status-badge {
+            font-size: 14px;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+        .status-upcoming { background-color: #ffc107; color: #000; }
+        .status-completed { background-color: #28a745; color: white; }
+        .status-canceled { background-color: #dc3545; color: white; }
+        .btn-cancel {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-cancel:hover {
+            background-color: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <body>
+        <div class="container mt-5 appointments-container position-relative">
+            <!-- Back Button -->
+            <a href="user_bookappointment.html" class="btn btn-secondary position-absolute top-0 end-0 m-3">
+                ← Back
+            </a>
+    
+            <h2 class="text-center mb-4">My Appointments</h2>
+    
+            <div class="card shadow p-3">
+                <h4 class="text-center mb-3">Upcoming & Past Appointments</h4>
+    
+                <div class="table-responsive">
+                    <table class="table table-bordered text-center">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Sample Appointments -->
+                            <tr>
+                                <td>Haircut & Styling</td>
+                                <td>April 5, 2025</td>
+                                <td>3:00 PM</td>
+                                <td><span class="status-badge status-upcoming">Upcoming</span></td>
+                                <td><button class="btn-cancel">Cancel</button></td>
+                            </tr>
+                            <tr>
+                                <td>Facial Treatment</td>
+                                <td>March 28, 2025</td>
+                                <td>11:00 AM</td>
+                                <td><span class="status-badge status-completed">Completed</span></td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Manicure</td>
+                                <td>March 25, 2025</td>
+                                <td>2:30 PM</td>
+                                <td><span class="status-badge status-canceled">Canceled</span></td>
+                                <td>—</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    
+</body>
+</html>

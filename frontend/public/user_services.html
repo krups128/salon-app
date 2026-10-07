@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Salon Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+        body {
+          font-family: "Montserrat", sans-serif;
+        }
+        .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+  }
+
+/* Navbar Styling */
+.custom-navbar {
+    background-color: #c9c2b7; /* Deep Black */
+    padding: 10px 20px;
+}
+
+/* Menu Links */
+.custom-navbar a {
+    color: rgb(8, 7, 7);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.custom-navbar a:hover {
+    color: #050505; /* Soft Gold */
+}
+
+/* Menu Links */
+.custom-navbar a {
+    color: rgb(6, 6, 6);
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 5px; /* Space for the underline effect */
+}
+
+/* Underline Effect on Hover */
+.custom-navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px; /* Thickness of the underline */
+    background-color: #080808; /* Soft Gold */
+    transition: width 0.3s ease-in-out;
+}
+
+.custom-navbar a:hover::after {
+    width: 100%;
+}
+
+
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #2c2c2c; /* Dark Brown */
+    border: none;
+}
+
+/* Dropdown Items */
+.dropdown-menu .dropdown-item {
+    color: white;
+    transition: background 0.3s;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: #c9c2b7; /* Gold Accent */
+    color: black;
+}
+
+/* Service Banner Section */
+.service-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    width: 100%;
+    height: 500px;
+}
+
+/* Image and Overlay Container */
+.service-banner-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.service-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Dark Transparent Overlay */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust darkness */
+}
+
+/* Centered Text */
+.service-banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.service-banner-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.service-banner-text p {
+    font-size: 1.2rem;
+}
+
+
+  /* Service Cards */
+  .service-card {
+    border: 2px solid #1d1b1b; /* Thick black border */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card .card-body {
+            text-align: center;
+            background: #e0dad0;
+            border-radius: 15px;
+            
+        
+        }
+
+        .service-card h5 {
+            font-weight: 600;
+            color: #1e1e1e;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #080808;
+            font-weight: 500;
+        }
+
+        /* Container Styling */
+        .container {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+
+/* Offer Section Button Styling */
+.btn-custom-offer {
+    background-color: #9d8b7e; /* Gold color */
+    color: #f9f7f7; /* Dark text for contrast */
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-custom-offer:hover {
+    background-color: #D4AF37; /* Darker gold */
+    color: white;
+}
+
+
+        
+     
+        .footer {
+                    background: #222;
+                    color: white;
+                    padding: 40px 0;
+
+                    footer a:hover {
+          color: #f8b400; /* Change to your brand color */
+          text-decoration: underline;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid custom-navbar">
+      <div class="d-flex align-items-center justify-content-between py-3">
+          <!-- Salon Name (Logo) -->
+          <img src="images/logo.png" alt="AURA LUXE Logo" style="width: 200px; height: 80px;">
+  
+          <!-- Menu Items -->
+          <div class="d-flex">
+              <a href="user_services.html" class="btn btn-link me-4">Services</a>
+              <a href="user_offers.html" class="btn btn-link me-4">Offers</a>
+              <a href="user_locateus.html" class="btn btn-link me-4">Locate Us</a>
+  
+              <!-- About Us Dropdown -->
+              <div class="dropdown me-4">
+                  <a href="#" class="btn btn-link dropdown-toggle" id="aboutDropdown" role="button">About Us</a>
+                  <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                      <li><a class="dropdown-item" href="user_about.html">About</a></li>
+                      <li><a class="dropdown-item" href="user_contact.html">Contact</a></li>
+                      <li><a class="dropdown-item" href="user_team.html">Team</a></li>
+                  </ul>
+              </div>
+  
+              <a href="user_bookappointment.html" class="btn btn-link me-4">Book Appointment</a>
+          </div>
+      </div>
+  </div>
+    
+
+  <div class="service-banner">
+    <!-- Image with Overlay -->
+    <div class="service-banner-image">
+      <img src="images/service.jpg" alt="Service Banner">
+      <div class="overlay"></div>
+    </div>
+  
+    <!-- Text Content -->
+    <div class="service-banner-text">
+      <h1>Services</h1>
+      <p>Unwind with style</p>
+    </div>
+  </div>
+  
+
+    <br>
+   
+    <div class="container">
+      <h2 class="text-center mb-4" style="color: #1e1e1e; font-weight: 700;">Our Luxurious Services</h2><br>
+
+      <div class="row g-4">
+          <!-- Haircuts & Styling -->
+          <div class="col-md-4">
+              <a href="haircuts.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Haircuts & Styling</h5>
+                          <p>₹799 - ₹1999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Hair Coloring -->
+          <div class="col-md-4">
+              <a href="hair-coloring.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Hair Coloring & Highlights</h5>
+                          <p>₹1499 - ₹4999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Hair Treatments -->
+          <div class="col-md-4">
+              <a href="hair-treatments.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Hair Treatments</h5>
+                          <p>₹2499 - ₹7999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Luxury Facials -->
+          <div class="col-md-4">
+              <a href="luxury-facials.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Luxury Facials</h5>
+                          <p>₹999 - ₹2999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Skin Brightening -->
+          <div class="col-md-4">
+              <a href="skin-brightening.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Skin Brightening Treatments</h5>
+                          <p>₹1299 - ₹3499</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Acne Treatment -->
+          <div class="col-md-4">
+              <a href="acne-treatment.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Acne Treatment</h5>
+                          <p>₹1599 - ₹3999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Manicure & Pedicure -->
+          <div class="col-md-4">
+              <a href="manicure-pedicure.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Manicure & Pedicure</h5>
+                          <p>₹699 - ₹1999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Nail Extensions -->
+          <div class="col-md-4">
+              <a href="nail-extensions.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Nail Extensions</h5>
+                          <p>₹999 - ₹3499</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Nail Art -->
+          <div class="col-md-4">
+              <a href="nail-art.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Nail Art & Custom Designs</h5>
+                          <p>₹499 - ₹1499</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- HD & Airbrush Makeup -->
+          <div class="col-md-4">
+              <a href="hd-airbrush-makeup.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>HD & Airbrush Makeup</h5>
+                          <p>₹3499 - ₹9999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Brow Lamination -->
+          <div class="col-md-4">
+              <a href="brow-lamination.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Brow Lamination & Tinting</h5>
+                          <p>₹999 - ₹2499</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+
+          <!-- Hot Stone Massage -->
+          <div class="col-md-4">
+              <a href="hot-stone-massage.html" class="text-decoration-none">
+                  <div class="card service-card shadow">
+                      <div class="card-body">
+                          <h5>Aromatherapy & Hot Stone Massage</h5>
+                          <p>₹2499 - ₹5999</p>
+                      </div>
+                  </div>
+              </a>
+          </div>
+     
+
+
+      <!-- Additional Services (Now inside the same row) -->
+      <div class="col-md-4">
+          <a href="body-polishing.html" class="text-decoration-none">
+              <div class="card service-card shadow">
+                  <div class="card-body">
+                      <h5>Body Polishing & Scrubs</h5>
+                      <p>₹1299 - ₹3999</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+
+      <div class="col-md-4">
+          <a href="eyelash-extensions.html" class="text-decoration-none">
+              <div class="card service-card shadow">
+                  <div class="card-body">
+                      <h5>Eyelash Extensions</h5>
+                      <p>₹999 - ₹2999</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+
+      <div class="col-md-4">
+          <a href="bridal-hairstyles.html" class="text-decoration-none">
+              <div class="card service-card shadow">
+                  <div class="card-body">
+                      <h5>Bridal & Party Hairstyles</h5>
+                      <p>₹1999 - ₹4999</p>
+                  </div>
+              </div>
+          </a>
+      </div>
+  </div>
+</div> <!-- Closing div for row -->
+
+
+
+    <!-- Offer Section -->
+<div class="position-relative text-center text-white bg-dark">
+    <img
+        src="images/g1.jpg"
+        class="img-fluid w-100"
+        style="height: 400px; object-fit: cover; opacity: 0.5"
+        alt="Hair Botox Offer"
+    />
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <br />
+        <h2 class="fw-bold">Add a Splash of Color</h2>
+        <h3 class="fw-semibold">
+            Enjoy up to 40% off on hair coloring services every Tuesday & Thursday. Book today!
+        </h3><br>
+        <a href="user_bookappointment.html" class="btn-custom-offer mt-3">BOOK AN APPOINTMENT</a>
+    </div>
+  </div>
+    <br><br>
+
+    <!-- Footer Section -->
+    <footer class="bg-dark text-white py-5">
+      <div class="container">
+        <div class="row">
+          <!-- About Us Section -->
+          <div class="col-md-3 text-center">
+            <h5>About Us</h5>
+            <p>
+              We are dedicated to providing high-quality beauty and wellness
+              services that enhance your natural beauty and boost your
+              confidence.
+            </p>
+          </div>
+
+          <!-- Services Section -->
+          <div class="col-md-3 text-center">
+            <h5>Our Services</h5>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-white">Hair Styling</a></li>
+              <li><a href="#" class="text-white">Facials & Skin Care</a></li>
+              <li><a href="#" class="text-white">Nail Care</a></li>
+              <li><a href="#" class="text-white">Massage Therapy</a></li>
+              <li><a href="#" class="text-white">Bridal Packages</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Info Section -->
+          <div class="col-md-3 text-center">
+            <h5>Contact Info</h5>
+            <p><strong>Address:</strong> 123 Beauty St, Glamour City</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:salon@example.com" class="text-white"
+                >salon@example.com</a
+              >
+            </p>
+          </div>
+
+          <!-- Social Media Section -->
+          <div class="col-md-3 text-center">
+            <h5>Follow Us</h5>
+            <div class="d-flex justify-content-center">
+              <a href="#" class="text-white me-3" aria-label="Facebook"
+                ><i class="fab fa-facebook fa-2x"></i
+              ></a>
+              <a href="#" class="text-white me-3" aria-label="Twitter"
+                ><i class="fab fa-twitter fa-2x"></i
+              ></a>
+              <a href="#" class="text-white me-3" aria-label="Instagram"
+                ><i class="fab fa-instagram fa-2x"></i
+              ></a>
+              <a href="#" class="text-white me-3" aria-label="YouTube"
+                ><i class="fab fa-youtube fa-2x"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="row mt-4 text-center">
+          <div class="col-12">
+            <p>&copy; 2025 Salon Name | All Rights Reserved</p>
+            <p>
+              Website designed by
+              <a href="your-website-link" class="text-white"
+                >Your Company Name</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
